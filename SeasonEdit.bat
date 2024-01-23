@@ -1,11 +1,17 @@
 @ECHO OFF
 :: Save the original path
 Set OriDir=%CD%
-:: Get the season number
-Set Season=%2
-Set /a Ep=1
-cd %1
+:: Get file location
+echo Input File Location
+Set /p TarDir=
+:: Get season
+echo Input Which Season
+Set /p Season=
+:: Go to target directory
+cd %TarDir%
+::Change name
 setlocal ENABLEDELAYEDEXPANSION
+Set /a Ep=1
 for %%x in (*) do (
     if !Ep! LSS 10 (
         Ren "%%x" "Episode S%Season%E0!Ep!%%~xx"
@@ -16,5 +22,7 @@ for %%x in (*) do (
     )
 )
 endlocal
+:: Go back to original directory
 cd %OriDir%
+:: Finish
 echo Finish
