@@ -1,4 +1,5 @@
 @echo off
+
 set start=%time%
 
 echo Press any key
@@ -6,7 +7,11 @@ timeout /t -1
 
 set end=%time%
 
-set options="tokens=1-4 delims=:.,"
+echo Start: %start%
+echo End: %end%
+
+set options="tokens=1-4 delims=:."
+
 for /f %options% %%a in ("%start%") do set start_h=%%a&set /a start_m=100%%b %% 100&set /a start_s=100%%c %% 100&set /a start_ms=100%%d %% 100
 for /f %options% %%a in ("%end%") do set end_h=%%a&set /a end_m=100%%b %% 100&set /a end_s=100%%c %% 100&set /a end_ms=100%%d %% 100
 
