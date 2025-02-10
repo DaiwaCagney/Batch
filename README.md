@@ -26,3 +26,10 @@ psexec.exe -s -i cmd.exe
 
 # Start Telnet:
 pkgmgr /iu:"TelnetClient"
+
+# Established Network Connection:
+netstat -naob
+
+# Check Process ID
+tasklist /m /fi “pid eq <PID>”
+wmic process where processid=<PID> get commandline
