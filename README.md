@@ -34,6 +34,6 @@ netstat -naob
 tasklist /m /fi “pid eq <PID>”
 wmic process where processid=<PID> get commandline
 
-# Disable Firewall & Defnder
+# Disable Firewall & Defender
 Set-MpPreference -DisableRealtimeMonitoring $true
 netsh advfirewall set allprofiles state off
