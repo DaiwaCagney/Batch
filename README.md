@@ -45,3 +45,6 @@ wmic process where processid=<PID> get commandline
 Set-MpPreference -DisableRealtimeMonitoring $true
 
 netsh advfirewall set allprofiles state off
+
+# Compute Hash
+certutil -hashfile  %filename%  %hashtype%
