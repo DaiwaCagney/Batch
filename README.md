@@ -74,6 +74,6 @@ certutil -hashfile  %filename%  %hashtype%
 ## Add PATH
 set PATH=%PATH%;C:\Your\New\Path
 
----
-
 echo %PATH%
+
+---
