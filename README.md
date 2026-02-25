@@ -14,6 +14,8 @@
 
 `vol` - Volume Label and Volume Serial Number
 
+`%TEMP%`
+
 ---
 
 ## Check Cert
@@ -76,6 +78,10 @@ nltest /DCList:%DCNAME%
 
 `net view` - Network Scan
 
+`Netsh firewall show opmode` --> show available profiles in firewall
+
+`netsh advfirewall firewall add rule` --> add a new rule in firewall
+
 ---
 
 ## Process
@@ -114,6 +120,13 @@ nltest /DCList:%DCNAME%
 `openfiles`
 
 `openfiles /local on`
+
+---
+
+## Dumping Wi-Fi Credentials Using netsh
+`netsh wlan show profiles`
+
+`netsh wlan show profile name={name} key=clear`
 
 ---
 
