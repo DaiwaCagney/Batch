@@ -14,8 +14,6 @@
 
 `vol` - Volume Label and Volume Serial Number
 
-`%TEMP%`
-
 ---
 
 ## Check Cert
