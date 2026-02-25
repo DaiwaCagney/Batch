@@ -1,5 +1,21 @@
 # Batch
 
+## Date
+`date & time`
+
+`echo | date >> file.txt`
+
+---
+
+## System Information
+`systeminfo`
+
+`ver`
+
+`vol` - Volume Label and Volume Serial Number
+
+---
+
 ## Check Cert
 ```
 echo Please input the URL
@@ -47,15 +63,31 @@ nltest /DCList:%DCNAME%
 
 ---
 
-## Established Network Connection
-`netstat -naob`
+## Network
+`netstat -naob` - Established network connection
+
+`netstat -r` - IP Routing Table
+
+`net statistics workstation`
+
+`net session` - who is connected
+
+`net file` - who is connected and what they are doing
+
+`net view` - Network Scan
 
 ---
 
-## Check Process ID
+## Process
 `tasklist /m /fi “pid eq <PID>”`
 
 `wmic process where processid=<PID> get commandline`
+
+`tasklist /v`
+
+`tasklist /svc`
+
+`net start`
 
 ---
 
@@ -75,6 +107,13 @@ nltest /DCList:%DCNAME%
 `set PATH=%PATH%;C:\Your\New\Path`
 
 `echo %PATH%`
+
+---
+
+## openfiles
+`openfiles`
+
+`openfiles /local on`
 
 ---
 
@@ -111,3 +150,4 @@ This command attempts to terminate a running process, any process it has permiss
 
 `wmic process where “name=’svchost.exe'” call terminate`
 
+---
